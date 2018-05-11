@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LRConnection"
-  s.version      = "0.1"
+  s.version      = "0.1.1"
   s.summary      = "An HTTP library that makes networking easier"
 
   # This description is used to generate tags and improve search results.
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LRConnection/LRConnection/LRConnection/**/*.{h,m}"
+  s.source_files  = "LRConnection/LRConnection/LRConnection/LRConnectionManager.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -135,5 +135,9 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  
+  s.subspec "Delegates" do |ss|
+    ss.source_files = "LRConnection/LRConnection/LRConnection/Delegates/*.{h,m}"
+  end
 
 end
