@@ -1,2 +1,2 @@
 # LRConnection
-LRConnection is an HTTP library that makes networking easier
+LRConnection is a lightweight HTTP library that makes networking easier
