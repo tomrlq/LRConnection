@@ -83,7 +83,8 @@
 			children = (
 				D7EC71F320A42E9400F87412 /* LRConnectionManager.h */,
 				D7EC71F420A42E9400F87412 /* LRConnectionManager.m */,
-				D7E6F00820A57B1D00E6135F /* Delegates */,
+				D7EC71F720A43D6100F87412 /* LRConnectionDataDelegate.h */,
+				D7EC71F820A43D6200F87412 /* LRConnectionDataDelegate.m */,
 			);
 			path = LRConnection;
 			sourceTree = "<group>";
@@ -106,15 +107,6 @@
 				D7610CB620A2A86F0036BC44 /* Foundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D7E6F00820A57B1D00E6135F /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				D7EC71F720A43D6100F87412 /* LRConnectionDataDelegate.h */,
-				D7EC71F820A43D6200F87412 /* LRConnectionDataDelegate.m */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
