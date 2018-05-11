@@ -14,6 +14,8 @@
 		D7610CB720A2A86F0036BC44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CB620A2A86F0036BC44 /* Foundation.framework */; };
 		D7610CB920A2A8780036BC44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CB820A2A8780036BC44 /* CoreGraphics.framework */; };
 		D7610CBB20A2A8810036BC44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CBA20A2A8810036BC44 /* UIKit.framework */; };
+		D7EC71F520A42E9400F87412 /* LRConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EC71F420A42E9400F87412 /* LRConnectionManager.m */; };
+		D7EC71F920A43D6200F87412 /* LRConnectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EC71F820A43D6200F87412 /* LRConnectionDataDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		D7610CB620A2A86F0036BC44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7610CB820A2A8780036BC44 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D7610CBA20A2A8810036BC44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7EC71F320A42E9400F87412 /* LRConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRConnectionManager.h; sourceTree = "<group>"; };
+		D7EC71F420A42E9400F87412 /* LRConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRConnectionManager.m; sourceTree = "<group>"; };
+		D7EC71F720A43D6100F87412 /* LRConnectionDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRConnectionDataDelegate.h; sourceTree = "<group>"; };
+		D7EC71F820A43D6200F87412 /* LRConnectionDataDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRConnectionDataDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 		D7610CB320A2A6AA0036BC44 /* LRConnection */ = {
 			isa = PBXGroup;
 			children = (
+				D7EC71F320A42E9400F87412 /* LRConnectionManager.h */,
+				D7EC71F420A42E9400F87412 /* LRConnectionManager.m */,
+				D7EC71F620A43D0A00F87412 /* Delegates */,
 			);
 			path = LRConnection;
 			sourceTree = "<group>";
@@ -97,6 +106,15 @@
 				D7610CB620A2A86F0036BC44 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7EC71F620A43D0A00F87412 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D7EC71F720A43D6100F87412 /* LRConnectionDataDelegate.h */,
+				D7EC71F820A43D6200F87412 /* LRConnectionDataDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7610CAD20A2A5220036BC44 /* main.m in Sources */,
+				D7EC71F920A43D6200F87412 /* LRConnectionDataDelegate.m in Sources */,
+				D7EC71F520A42E9400F87412 /* LRConnectionManager.m in Sources */,
 				D7610C9F20A2A5220036BC44 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
