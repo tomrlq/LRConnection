@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, LRHTTPMethod) {
     LRHTTPMethodGET,
     LRHTTPMethodPOST,
-} LRHTTPMethod;
+};
 
-typedef void(^LRConnectionProgressBlock)(NSProgress *);     // progress callback
-typedef void(^LRConnectionSuccessBlock)(NSData *data);      // success callback
-typedef void(^LRConnectionFailureBlock)(NSError *error);    // failure callback
+typedef void(^LRConnectionProgressBlock)(NSProgress *_Nonnull progress);    // progress callback
+typedef void(^LRConnectionSuccessBlock)(NSData *_Nonnull data);             // success callback
+typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // failure callback
 
 /**
  A singleton with convenience methods for making HTTP requests
@@ -23,14 +23,14 @@ typedef void(^LRConnectionFailureBlock)(NSError *error);    // failure callback
 @interface LRConnectionManager : NSObject
 
 /// singleton
-+ (LRConnectionManager *)sharedManager;
++ (nonnull LRConnectionManager *)sharedManager;
 
 /// start URL request
-- (void)requestURL:(NSString *)URLString
+- (void)requestURL:(nonnull NSString *)URLString
         HTTPMethod:(LRHTTPMethod)httpMethod
-        parameters:(NSDictionary *)parameters
-          progress:(LRConnectionProgressBlock)progressBlock
-           success:(LRConnectionSuccessBlock)successBlock
-           failure:(LRConnectionFailureBlock)failureBlock;
+        parameters:(nullable NSDictionary *)parameters
+          progress:(nullable LRConnectionProgressBlock)progressBlock
+           success:(nullable LRConnectionSuccessBlock)successBlock
+           failure:(nullable LRConnectionFailureBlock)failureBlock;
 
 @end
