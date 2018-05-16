@@ -26,9 +26,9 @@ typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // f
 + (nonnull LRConnectionManager *)sharedManager;
 
 /// start URL request
-- (void)requestURL:(nonnull NSString *)URLString
-        HTTPMethod:(LRHTTPMethod)httpMethod
-        parameters:(nullable NSDictionary *)parameters
+- (void)requestURL:(nonnull NSString *)url
+            method:(LRHTTPMethod)method
+            params:(nullable NSDictionary *)params
           progress:(nullable LRConnectionProgressBlock)progressBlock
            success:(nullable LRConnectionSuccessBlock)successBlock
            failure:(nullable LRConnectionFailureBlock)failureBlock;

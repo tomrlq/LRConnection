@@ -38,8 +38,7 @@
     if (self) {
         delegateCache = [NSMutableDictionary dictionary];
         NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-        sessionConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-        sessionConfig.HTTPCookieStorage = nil;
+//        sessionConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         urlSession = [NSURLSession sessionWithConfiguration:sessionConfig
                                                    delegate:self
                                               delegateQueue:nil];
@@ -49,12 +48,12 @@
 
 #pragma mark - Public Methods
 
-- (void)requestURL:(NSString *)URLString HTTPMethod:(LRHTTPMethod)httpMethod parameters:(NSDictionary *)parameters progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
+- (void)requestURL:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary *)params progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
 {
-    NSURLRequest *request = [self requestWithURL:URLString HTTPMethod:httpMethod parameters:parameters];
+    NSURLRequest *request = [self requestWithURL:url method:method params:params];
     LRConnectionDataDelegate *delegate = delegateCache[request];
     if (!delegate) {
-        delegate = [[LRConnectionDataDelegate alloc] initWithHTTPMethod:httpMethod];
+        delegate = [[LRConnectionDataDelegate alloc] initWithHTTPMethod:method];
         [delegate addProgress:progressBlock success:successBlock failure:failureBlock];
         delegateCache[request] = delegate;
         NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request];
@@ -95,18 +94,18 @@
 
 #pragma mark - Request Serialization
 
-- (NSURLRequest *)requestWithURL:(NSString *)URLString HTTPMethod:(LRHTTPMethod)httpMethod parameters:(NSDictionary *)parameters {
-    switch (httpMethod) {
+- (NSURLRequest *)requestWithURL:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary *)params {
+    switch (method) {
         case LRHTTPMethodGET: {
-            NSString *queryString = [self queryStringFromParameters:parameters];
-            NSString *requestString = [NSString stringWithFormat:@"%@?%@", URLString, queryString];
+            NSString *queryString = [self queryStringFromParams:params];
+            NSString *requestString = [NSString stringWithFormat:@"%@?%@", url, queryString];
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestString]];
             return request;
         }
         case LRHTTPMethodPOST: {
-            NSString *queryString = [self queryStringFromParameters:parameters];
+            NSString *queryString = [self queryStringFromParams:params];
             NSData *queryData = [queryString dataUsingEncoding:NSUTF8StringEncoding];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
             [request setHTTPMethod:@"POST"];
             [request setHTTPBody:queryData];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -115,9 +114,9 @@
     }
 }
 
-- (NSString *)queryStringFromParameters:(NSDictionary *)parameters {
+- (NSString *)queryStringFromParams:(NSDictionary *)params {
     NSMutableString *query = [NSMutableString string];
-    [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [query appendFormat:@"%@=%@&", [self escapedStringFromString:[key description]], [self escapedStringFromString:[obj description]]];
     }];
     if (query.length > 0) {
