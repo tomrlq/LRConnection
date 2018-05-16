@@ -3,7 +3,7 @@
 //  LRConnection
 //
 //  Created by Ruan Lingqi on 13/01/18.
-//  Copyright © 2018年 Suntoyo. All rights reserved.
+//  Copyright © 2018年 tomrlq. All rights reserved.
 //
 
 #import "LRConnectionDataDelegate.h"

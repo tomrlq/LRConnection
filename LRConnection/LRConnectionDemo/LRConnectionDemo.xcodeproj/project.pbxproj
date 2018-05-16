@@ -118,7 +118,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = Suntoyo;
+				ORGANIZATIONNAME = tomrlq;
 				TargetAttributes = {
 					D7610C9920A2A5220036BC44 = {
 						CreatedOnToolsVersion = 9.2;
@@ -292,7 +292,7 @@
 				DEVELOPMENT_TEAM = 43FVVDGE72;
 				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.suntoyo.LRConnectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,7 +306,7 @@
 				DEVELOPMENT_TEAM = 43FVVDGE72;
 				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.com.suntoyo.LRConnectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

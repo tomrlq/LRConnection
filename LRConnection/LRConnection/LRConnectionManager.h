@@ -3,7 +3,7 @@
 //  LRConnection
 //
 //  Created by Ruan Lingqi on 13/01/18.
-//  Copyright © 2018年 Suntoyo. All rights reserved.
+//  Copyright © 2018年 tomrlq. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -28,7 +28,7 @@ typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // f
 /// start URL request
 - (void)requestURL:(nonnull NSString *)url
             method:(LRHTTPMethod)method
-            params:(nullable NSDictionary *)params
+            params:(nullable NSDictionary<NSString *, id> *)params
           progress:(nullable LRConnectionProgressBlock)progressBlock
            success:(nullable LRConnectionSuccessBlock)successBlock
            failure:(nullable LRConnectionFailureBlock)failureBlock;

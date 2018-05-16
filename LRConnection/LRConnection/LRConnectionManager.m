@@ -3,7 +3,7 @@
 //  LRConnection
 //
 //  Created by Ruan Lingqi on 13/01/18.
-//  Copyright © 2018年 Suntoyo. All rights reserved.
+//  Copyright © 2018年 tomrlq. All rights reserved.
 //
 
 #import "LRConnectionManager.h"
@@ -48,7 +48,7 @@
 
 #pragma mark - Public Methods
 
-- (void)requestURL:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary *)params progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
+- (void)requestURL:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary<NSString *,id> *)params progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
 {
     NSURLRequest *request = [self requestWithURL:url method:method params:params];
     LRConnectionDataDelegate *delegate = delegateCache[request];
