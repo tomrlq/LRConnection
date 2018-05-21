@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LRConnection"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "An HTTP library that makes networking easier"
 
   # This description is used to generate tags and improve search results.
@@ -139,6 +139,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'LRConnection/LRConnection/*.{h,m}'
+    ss.public_header_files = "LRConnection/LRConnection/LRConnectionManager.h"
     ss.exclude_files = 'LRConnection/LRConnection/LRConnection.h'
   end
 

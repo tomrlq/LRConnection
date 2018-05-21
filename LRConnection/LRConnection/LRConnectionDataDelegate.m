@@ -56,11 +56,9 @@
     if (httpMethod == LRHTTPMethodGET) {
         progress.totalUnitCount = dataTask.countOfBytesExpectedToReceive;
         progress.completedUnitCount = dataTask.countOfBytesReceived;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            for (LRConnectionProgressBlock progressBlock in progressBlocks) {
-                progressBlock(progress);
-            }
-        });
+        for (LRConnectionProgressBlock progressBlock in progressBlocks) {
+            progressBlock(progress);
+        }
     }
 }
 
@@ -68,11 +66,9 @@
     if (httpMethod == LRHTTPMethodPOST) {
         progress.totalUnitCount = task.countOfBytesExpectedToSend;
         progress.completedUnitCount = task.countOfBytesSent;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            for (LRConnectionProgressBlock progressBlock in progressBlocks) {
-                progressBlock(progress);
-            }
-        });
+        for (LRConnectionProgressBlock progressBlock in progressBlocks) {
+            progressBlock(progress);
+        }
     }
 }
 

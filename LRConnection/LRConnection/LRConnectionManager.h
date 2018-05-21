@@ -18,14 +18,23 @@ typedef void(^LRConnectionSuccessBlock)(NSData *_Nonnull data);             // s
 typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // failure callback
 
 /**
- A singleton with convenience methods for making HTTP requests
+ * 'LRConnectionManager' have convenience methods for making HTTP requests
  */
 @interface LRConnectionManager : NSObject
 
 /// singleton
 + (nonnull LRConnectionManager *)sharedManager;
 
-/// start URL request
+/**
+ Creates and runs a HTTP request
+ 
+ @param url             The URL string used in the request
+ @param method          The HTTP method to use
+ @param params          The parameters to be encoded in the request.
+ @param progressBlock   Callback to receive progress update. It is called on the session queue
+ @param successBlock    Callback to receive the final data. It is called on the main queue
+ @param failureBlock    Callback to receive the error. It is called on the main queue
+ */
 - (void)requestURL:(nonnull NSString *)url
             method:(LRHTTPMethod)method
             params:(nullable NSDictionary<NSString *, id> *)params
