@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7B6246320A6978200A52E64 /* LRConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B6246120A6978200A52E64 /* LRConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7B6247F20A69DF800A52E64 /* LRConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B6247B20A69DF800A52E64 /* LRConnectionManager.h */; };
+		D7B6247F20A69DF800A52E64 /* LRConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B6247B20A69DF800A52E64 /* LRConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7B6248020A69DF800A52E64 /* LRConnectionDataDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B6247C20A69DF800A52E64 /* LRConnectionDataDelegate.h */; };
 		D7B6248120A69DF800A52E64 /* LRConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B6247D20A69DF800A52E64 /* LRConnectionManager.m */; };
 		D7B6248220A69DF800A52E64 /* LRConnectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B6247E20A69DF800A52E64 /* LRConnectionDataDelegate.m */; };

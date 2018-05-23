@@ -10,7 +10,6 @@
 
 @interface LRConnectionDataDelegate ()
 {
-    LRHTTPMethod httpMethod;
     NSMutableData *dataContainer;
     NSProgress *progress;
     NSMutableArray *progressBlocks;     // all progress callbacks
@@ -26,7 +25,7 @@
 - (instancetype)initWithHTTPMethod:(LRHTTPMethod)method {
     self = [super init];
     if (self) {
-        httpMethod = method;
+        _httpMethod = method;
         dataContainer = [NSMutableData data];
         progress = [[NSProgress alloc] initWithParent:nil userInfo:nil];
         progress.totalUnitCount = NSURLSessionTransferSizeUnknown;
@@ -53,7 +52,7 @@
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     [dataContainer appendData:data];
-    if (httpMethod == LRHTTPMethodGET) {
+    if (self.httpMethod == LRHTTPMethodGET) {
         progress.totalUnitCount = dataTask.countOfBytesExpectedToReceive;
         progress.completedUnitCount = dataTask.countOfBytesReceived;
         for (LRConnectionProgressBlock progressBlock in progressBlocks) {
@@ -63,7 +62,7 @@
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
-    if (httpMethod == LRHTTPMethodPOST) {
+    if (self.httpMethod == LRHTTPMethodPOST) {
         progress.totalUnitCount = task.countOfBytesExpectedToSend;
         progress.completedUnitCount = task.countOfBytesSent;
         for (LRConnectionProgressBlock progressBlock in progressBlocks) {

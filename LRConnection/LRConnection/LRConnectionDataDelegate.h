@@ -11,8 +11,11 @@
 
 @interface LRConnectionDataDelegate : NSObject <NSURLSessionDataDelegate>
 
+@property (nonatomic, readonly) LRHTTPMethod httpMethod;
+
 - (instancetype)initWithHTTPMethod:(LRHTTPMethod)httpMethod;
 
+/// add callback to delegate
 - (void)addProgress:(LRConnectionProgressBlock)progressBlock
             success:(LRConnectionSuccessBlock)successBlock
             failure:(LRConnectionFailureBlock)failureBlock;

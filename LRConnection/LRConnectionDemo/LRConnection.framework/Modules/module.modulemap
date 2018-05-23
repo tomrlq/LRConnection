@@ -1,0 +1,6 @@
+framework module LRConnection {
+  umbrella header "LRConnection.h"
+
+  export *
+  module * { export * }
+}
