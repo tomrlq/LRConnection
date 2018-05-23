@@ -7,11 +7,11 @@
 LRConnection is an HTTP library that makes networking for iOS easier
 
 ## Installation
-Podfile
+* Podfile
 ```ruby
 pod 'LRConnection'
 ```
-Manually
+* Manually
 > add LRConnection.framework to "General->Embedded Binaries"
 
 ## Requirements
