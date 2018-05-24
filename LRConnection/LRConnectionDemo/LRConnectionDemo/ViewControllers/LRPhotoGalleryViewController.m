@@ -58,6 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LRGalleryItem *galleryItem = currentItems[indexPath.row];
     LRGalleryItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LRGalleryItemCell" forIndexPath:indexPath];
+    cell.tag = indexPath.row;
     [cell setGalleryItem:galleryItem];
     return cell;
 }

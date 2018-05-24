@@ -17,6 +17,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
 @interface LRGalleryStore ()
 {
     NSMutableArray *recentItems;
+    NSMutableDictionary *imageCache;
 }
 @end
 
@@ -41,6 +42,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
     self = [super init];
     if (self) {
         recentItems = [NSMutableArray array];
+        imageCache = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -57,11 +59,31 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
     NSDictionary *params = @{@"api_key" : APIKey,
                              @"format" : @"json",
                              @"nojsoncallback": @"1",
+                             @"extras" : @"url_s",
                              @"method" : FetchRecentsMethod};
     LRConnectionManager *manager = [LRConnectionManager sharedManager];
     [manager requestURL:EndPoint method:LRHTTPMethodGET params:params progress:nil success:^(NSData * _Nonnull data) {
         [self parseItems:recentItems fromJSON:data];
         completion ? completion(recentItems, nil) : nil;
+    } failure:^(NSError * _Nonnull error) {
+        completion ? completion(nil, error) : nil;
+    }];
+}
+
+- (void)fetchImageForGalleryItem:(LRGalleryItem *)galleryItem completion:(void (^)(UIImage *, NSError *))completion {
+    NSString *imageKey = galleryItem.imageUrl;
+    UIImage *image = [imageCache objectForKey:imageKey];
+    if (image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion ? completion(image, nil) : nil;
+        });
+        return;
+    }
+    LRConnectionManager *manager = [LRConnectionManager sharedManager];
+    [manager requestURL:imageKey method:LRHTTPMethodGET params:nil progress:nil success:^(NSData * _Nonnull data) {
+        UIImage *image = [UIImage imageWithData:data];
+        [imageCache setObject:image forKey:imageKey];
+        completion ? completion(image, nil) : nil;
     } failure:^(NSError * _Nonnull error) {
         completion ? completion(nil, error) : nil;
     }];

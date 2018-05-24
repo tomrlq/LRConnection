@@ -16,6 +16,7 @@
         _itemID = jsonDict[@"id"];
         _caption = jsonDict[@"title"];
         _owner = jsonDict[@"owner"];
+        _imageUrl = jsonDict[@"url_s"];
     }
     return self;
 }

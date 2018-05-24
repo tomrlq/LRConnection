@@ -13,6 +13,7 @@
 @property (nonatomic, readonly, copy) NSString *itemID;
 @property (nonatomic, readonly, copy) NSString *caption;
 @property (nonatomic, readonly, copy) NSString *owner;
+@property (nonatomic, readonly, copy) NSString *imageUrl;
 
 - (instancetype)initWithJSON:(NSDictionary *)jsonDict;
 

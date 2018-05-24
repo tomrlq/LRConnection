@@ -19,14 +19,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="lm9-Gw-ef6">
+                        <rect key="frame" x="16" y="11" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Ymb-9p-JLm"/>
+                            <constraint firstAttribute="width" constant="44" id="xKO-3Z-Kvd"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-dD-f9d">
-                        <rect key="frame" x="16" y="11" width="42" height="21"/>
+                        <rect key="frame" x="68" y="11" width="42" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gl-6a-gUe">
-                        <rect key="frame" x="16" y="39" width="33" height="16"/>
+                        <rect key="frame" x="68" y="39" width="33" height="16"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                         <color key="textColor" red="0.387283237" green="0.387283237" blue="0.387283237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -39,21 +46,27 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="lm9-Gw-ef6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3bv-fQ-8FR"/>
                     <constraint firstItem="8gl-6a-gUe" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="GIn-gW-ZwF"/>
+                    <constraint firstItem="rEW-dD-f9d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="68" id="J4M-GI-lvg"/>
                     <constraint firstItem="rEW-dD-f9d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="L20-4r-7iF"/>
                     <constraint firstItem="8gl-6a-gUe" firstAttribute="leading" secondItem="rEW-dD-f9d" secondAttribute="leading" id="LTh-RI-2h0"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rEW-dD-f9d" secondAttribute="trailing" constant="160" id="LfB-sc-c9v"/>
                     <constraint firstItem="U75-Ym-n1s" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NZD-ib-GGX"/>
                     <constraint firstItem="U75-Ym-n1s" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Rq1-fW-WnC"/>
-                    <constraint firstItem="rEW-dD-f9d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ceC-mI-zmi"/>
+                    <constraint firstItem="lm9-Gw-ef6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pP7-Rs-1Od"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="captionLabel" destination="rEW-dD-f9d" id="NlQ-Cd-u3o"/>
                 <outlet property="ownerLabel" destination="U75-Ym-n1s" id="pKc-93-bVr"/>
                 <outlet property="serialLabel" destination="8gl-6a-gUe" id="AD5-8O-AXE"/>
+                <outlet property="thumbnailView" destination="lm9-Gw-ef6" id="med-Pi-i9r"/>
             </connections>
             <point key="canvasLocation" x="25" y="52"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="placeholder" width="80" height="60"/>
+    </resources>
 </document>
