@@ -22,6 +22,9 @@ typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // f
  */
 @interface LRConnectionManager : NSObject
 
+/// Whether or not to trust invalid SSL certificates. Defaults to `NO`.
+@property (nonatomic, assign) BOOL allowInvalidCertificates;
+
 /// singleton
 + (nonnull LRConnectionManager *)sharedManager;
 
@@ -35,11 +38,11 @@ typedef void(^LRConnectionFailureBlock)(NSError *_Nonnull error);           // f
  @param successBlock    Block to handle final data. Called on the main queue
  @param failureBlock    Block to handle error. Called on the main queue
  */
-- (void)requestURL:(nonnull NSString *)url
-            method:(LRHTTPMethod)method
-            params:(nullable NSDictionary<NSString *, id> *)params
-          progress:(nullable LRConnectionProgressBlock)progressBlock
-           success:(nullable LRConnectionSuccessBlock)successBlock
-           failure:(nullable LRConnectionFailureBlock)failureBlock;
+- (void)requestForUrl:(nonnull NSString *)url
+               method:(LRHTTPMethod)method
+               params:(nullable NSDictionary<NSString *, id> *)params
+             progress:(nullable LRConnectionProgressBlock)progressBlock
+              success:(nullable LRConnectionSuccessBlock)successBlock
+              failure:(nullable LRConnectionFailureBlock)failureBlock;
 
 @end

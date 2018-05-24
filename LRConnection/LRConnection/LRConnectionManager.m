@@ -36,6 +36,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _allowInvalidCertificates = NO;
         delegateCache = [NSMutableDictionary dictionary];
         NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
 //        sessionConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
@@ -48,7 +49,7 @@
 
 #pragma mark - Public Methods
 
-- (void)requestURL:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary<NSString *,id> *)params progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
+- (void)requestForUrl:(NSString *)url method:(LRHTTPMethod)method params:(NSDictionary<NSString *,id> *)params progress:(LRConnectionProgressBlock)progressBlock success:(LRConnectionSuccessBlock)successBlock failure:(LRConnectionFailureBlock)failureBlock
 {
     NSURLRequest *request = [self requestWithURL:url method:method params:params];
     LRConnectionDataDelegate *delegate = delegateCache[request];
@@ -67,10 +68,10 @@
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     id<NSURLSessionTaskDelegate> delegate = delegateCache[task.originalRequest];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [delegate URLSession:session task:task didCompleteWithError:error];
         [delegateCache removeObjectForKey:task.originalRequest];
-    }];
+    });
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
@@ -81,7 +82,11 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
     if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
         NSURLCredential *cred = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-        completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
+        if (self.allowInvalidCertificates) {
+            completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
+        } else {
+            completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, cred);
+        }
     }
 }
 

@@ -62,7 +62,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
                              @"extras" : @"url_s",
                              @"method" : FetchRecentsMethod};
     LRConnectionManager *manager = [LRConnectionManager sharedManager];
-    [manager requestURL:EndPoint method:LRHTTPMethodGET params:params progress:nil success:^(NSData * _Nonnull data) {
+    [manager requestForUrl:EndPoint method:LRHTTPMethodGET params:params progress:nil success:^(NSData * _Nonnull data) {
         [self parseItems:recentItems fromJSON:data];
         completion ? completion(recentItems, nil) : nil;
     } failure:^(NSError * _Nonnull error) {
@@ -80,7 +80,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
         return;
     }
     LRConnectionManager *manager = [LRConnectionManager sharedManager];
-    [manager requestURL:imageKey method:LRHTTPMethodGET params:nil progress:nil success:^(NSData * _Nonnull data) {
+    [manager requestForUrl:imageKey method:LRHTTPMethodGET params:nil progress:nil success:^(NSData * _Nonnull data) {
         UIImage *image = [UIImage imageWithData:data];
         [imageCache setObject:image forKey:imageKey];
         completion ? completion(image, nil) : nil;
