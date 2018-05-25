@@ -38,7 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D7610C9A20A2A5220036BC44 /* LRConnectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRConnectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7610C9A20A2A5220036BC44 /* LRConnectionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRConnectionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7610C9D20A2A5220036BC44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7610C9E20A2A5220036BC44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D7610CA620A2A5220036BC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		D7610C9120A2A5220036BC44 = {
 			isa = PBXGroup;
 			children = (
-				D7610C9C20A2A5220036BC44 /* LRConnectionDemo */,
+				D7610C9C20A2A5220036BC44 /* LRConnectionExample */,
 				D7610CB520A2A8550036BC44 /* Frameworks */,
 				D7610C9B20A2A5220036BC44 /* Products */,
 			);
@@ -87,12 +87,12 @@
 		D7610C9B20A2A5220036BC44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7610C9A20A2A5220036BC44 /* LRConnectionDemo.app */,
+				D7610C9A20A2A5220036BC44 /* LRConnectionExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7610C9C20A2A5220036BC44 /* LRConnectionDemo */ = {
+		D7610C9C20A2A5220036BC44 /* LRConnectionExample */ = {
 			isa = PBXGroup;
 			children = (
 				D7F82F8C20B5087E00E2EC37 /* ViewControllers */,
@@ -103,7 +103,7 @@
 				D7610C9E20A2A5220036BC44 /* AppDelegate.m */,
 				D7610CB420A2A7DC0036BC44 /* Supporting Files */,
 			);
-			path = LRConnectionDemo;
+			path = LRConnectionExample;
 			sourceTree = "<group>";
 		};
 		D7610CB420A2A7DC0036BC44 /* Supporting Files */ = {
@@ -168,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D7610C9920A2A5220036BC44 /* LRConnectionDemo */ = {
+		D7610C9920A2A5220036BC44 /* LRConnectionExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7610CB020A2A5220036BC44 /* Build configuration list for PBXNativeTarget "LRConnectionDemo" */;
+			buildConfigurationList = D7610CB020A2A5220036BC44 /* Build configuration list for PBXNativeTarget "LRConnectionExample" */;
 			buildPhases = (
 				D7610C9620A2A5220036BC44 /* Sources */,
 				D7610C9720A2A5220036BC44 /* Frameworks */,
@@ -181,9 +181,9 @@
 			);
 			dependencies = (
 			);
-			name = LRConnectionDemo;
+			name = LRConnectionExample;
 			productName = LRConnection;
-			productReference = D7610C9A20A2A5220036BC44 /* LRConnectionDemo.app */;
+			productReference = D7610C9A20A2A5220036BC44 /* LRConnectionExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D7610C9520A2A5220036BC44 /* Build configuration list for PBXProject "LRConnectionDemo" */;
+			buildConfigurationList = D7610C9520A2A5220036BC44 /* Build configuration list for PBXProject "LRConnectionExample" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,7 +215,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7610C9920A2A5220036BC44 /* LRConnectionDemo */,
+				D7610C9920A2A5220036BC44 /* LRConnectionExample */,
 			);
 		};
 /* End PBXProject section */
@@ -375,9 +375,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionDemo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -393,9 +393,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionDemo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LRConnectionExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.tomrlq.LRConnectionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -404,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D7610C9520A2A5220036BC44 /* Build configuration list for PBXProject "LRConnectionDemo" */ = {
+		D7610C9520A2A5220036BC44 /* Build configuration list for PBXProject "LRConnectionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7610CAE20A2A5220036BC44 /* Debug */,
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7610CB020A2A5220036BC44 /* Build configuration list for PBXNativeTarget "LRConnectionDemo" */ = {
+		D7610CB020A2A5220036BC44 /* Build configuration list for PBXNativeTarget "LRConnectionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7610CB120A2A5220036BC44 /* Debug */,

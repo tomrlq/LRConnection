@@ -5,6 +5,6 @@
       location = "group:LRConnection.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:LRConnectionDemo/LRConnectionDemo.xcodeproj">
+      location = "group:/Users/ruanlingqi/Documents/SourceTree/LRConnection/LRConnection/Example/LRConnectionExample.xcodeproj">
    </FileRef>
 </Workspace>
