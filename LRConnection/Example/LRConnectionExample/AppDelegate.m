@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  LRConnectionDemo
+//  LRConnectionExample
 //
 //  Created by Ruan Lingqi on 09/05/18.
 //  Copyright © 2018年 tomrlq. All rights reserved.

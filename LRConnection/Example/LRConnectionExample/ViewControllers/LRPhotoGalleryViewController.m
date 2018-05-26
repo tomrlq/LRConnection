@@ -1,6 +1,6 @@
 //
 //  LRPhotoGalleryViewController.m
-//  LRConnectionDemo
+//  LRConnectionExample
 //
 //  Created by Ruan Lingqi on 23/05/18.
 //  Copyright © 2018年 tomrlq. All rights reserved.
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"LRConnection Demo";
+    self.title = @"LRConnection Example";
     self.clearsSelectionOnViewWillAppear = NO;
     
     self.tableView.tableFooterView = [UIView new];

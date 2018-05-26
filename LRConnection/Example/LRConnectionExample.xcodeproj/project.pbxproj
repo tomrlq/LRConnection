@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D76076B820B815FA0019E1D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76076B720B815FA0019E1D3 /* AppDelegate.swift */; };
+		D76076BD20B815FA0019E1D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76076BB20B815FA0019E1D3 /* Main.storyboard */; };
+		D76076BF20B815FA0019E1D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76076BE20B815FA0019E1D3 /* Assets.xcassets */; };
+		D76076C220B815FA0019E1D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76076C020B815FA0019E1D3 /* LaunchScreen.storyboard */; };
 		D7610C9F20A2A5220036BC44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7610C9E20A2A5220036BC44 /* AppDelegate.m */; };
 		D7610CA720A2A5220036BC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7610CA620A2A5220036BC44 /* Assets.xcassets */; };
 		D7610CAA20A2A5220036BC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7610CA820A2A5220036BC44 /* LaunchScreen.storyboard */; };
@@ -14,6 +18,12 @@
 		D7610CB720A2A86F0036BC44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CB620A2A86F0036BC44 /* Foundation.framework */; };
 		D7610CB920A2A8780036BC44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CB820A2A8780036BC44 /* CoreGraphics.framework */; };
 		D7610CBB20A2A8810036BC44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7610CBA20A2A8810036BC44 /* UIKit.framework */; };
+		D7F3197E20B940F2005B2107 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3197D20B940F2005B2107 /* PhotoGalleryViewController.swift */; };
+		D7F3198020B941F4005B2107 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3197F20B941F4005B2107 /* GalleryItem.swift */; };
+		D7F3198220B942D7005B2107 /* GalleryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3198120B942D7005B2107 /* GalleryStore.swift */; };
+		D7F3198520B943C2005B2107 /* LRConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3198420B943C2005B2107 /* LRConnection.framework */; };
+		D7F3198620B943C2005B2107 /* LRConnection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3198420B943C2005B2107 /* LRConnection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7F3198920B961E3005B2107 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3198820B961E3005B2107 /* GalleryItemCell.swift */; };
 		D7F82F8F20B508CF00E2EC37 /* LRPhotoGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F82F8E20B508CF00E2EC37 /* LRPhotoGalleryViewController.m */; };
 		D7F82F9420B5092300E2EC37 /* LRGalleryItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F82F9220B5092300E2EC37 /* LRGalleryItemCell.m */; };
 		D7F82F9520B5092300E2EC37 /* LRGalleryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F82F9320B5092300E2EC37 /* LRGalleryItemCell.xib */; };
@@ -24,6 +34,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D7F3198720B943C2005B2107 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7F3198620B943C2005B2107 /* LRConnection.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7F82FA420B5118200E2EC37 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,6 +59,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D76076B520B815FA0019E1D3 /* LRConnectionExample(Swift).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LRConnectionExample(Swift).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76076B720B815FA0019E1D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D76076BC20B815FA0019E1D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D76076BE20B815FA0019E1D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D76076C120B815FA0019E1D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D76076C320B815FA0019E1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7610C9A20A2A5220036BC44 /* LRConnectionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRConnectionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7610C9D20A2A5220036BC44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7610C9E20A2A5220036BC44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,6 +75,11 @@
 		D7610CB620A2A86F0036BC44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7610CB820A2A8780036BC44 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D7610CBA20A2A8810036BC44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7F3197D20B940F2005B2107 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
+		D7F3197F20B941F4005B2107 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
+		D7F3198120B942D7005B2107 /* GalleryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryStore.swift; sourceTree = "<group>"; };
+		D7F3198420B943C2005B2107 /* LRConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LRConnection.framework; sourceTree = "<group>"; };
+		D7F3198820B961E3005B2107 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
 		D7F82F8D20B508CF00E2EC37 /* LRPhotoGalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRPhotoGalleryViewController.h; sourceTree = "<group>"; };
 		D7F82F8E20B508CF00E2EC37 /* LRPhotoGalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRPhotoGalleryViewController.m; sourceTree = "<group>"; };
 		D7F82F9120B5092300E2EC37 /* LRGalleryItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRGalleryItemCell.h; sourceTree = "<group>"; };
@@ -61,6 +93,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D76076B220B815FA0019E1D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F3198520B943C2005B2107 /* LRConnection.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7610C9720A2A5220036BC44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,11 +115,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D76076B620B815FA0019E1D3 /* LRConnectionExample(Swift) */ = {
+			isa = PBXGroup;
+			children = (
+				D76076B720B815FA0019E1D3 /* AppDelegate.swift */,
+				D7F3197D20B940F2005B2107 /* PhotoGalleryViewController.swift */,
+				D7F3198820B961E3005B2107 /* GalleryItemCell.swift */,
+				D7F3197F20B941F4005B2107 /* GalleryItem.swift */,
+				D7F3198120B942D7005B2107 /* GalleryStore.swift */,
+				D76076BB20B815FA0019E1D3 /* Main.storyboard */,
+				D76076C720B816180019E1D3 /* Supporting Files */,
+			);
+			path = "LRConnectionExample(Swift)";
+			sourceTree = "<group>";
+		};
+		D76076C720B816180019E1D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D76076BE20B815FA0019E1D3 /* Assets.xcassets */,
+				D76076C320B815FA0019E1D3 /* Info.plist */,
+				D76076C020B815FA0019E1D3 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D7610C9120A2A5220036BC44 = {
 			isa = PBXGroup;
 			children = (
 				D7610C9C20A2A5220036BC44 /* LRConnectionExample */,
+				D76076B620B815FA0019E1D3 /* LRConnectionExample(Swift) */,
 				D7610CB520A2A8550036BC44 /* Frameworks */,
+				D7F3198320B9439A005B2107 /* Frameworks(Swift) */,
 				D7610C9B20A2A5220036BC44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D7610C9A20A2A5220036BC44 /* LRConnectionExample.app */,
+				D76076B520B815FA0019E1D3 /* LRConnectionExample(Swift).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +193,14 @@
 				D7610CB620A2A86F0036BC44 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7F3198320B9439A005B2107 /* Frameworks(Swift) */ = {
+			isa = PBXGroup;
+			children = (
+				D7F3198420B943C2005B2107 /* LRConnection.framework */,
+			);
+			name = "Frameworks(Swift)";
 			sourceTree = "<group>";
 		};
 		D7F82F8C20B5087E00E2EC37 /* ViewControllers */ = {
@@ -168,6 +243,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D76076B420B815FA0019E1D3 /* LRConnectionExample(Swift) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D76076C620B815FA0019E1D3 /* Build configuration list for PBXNativeTarget "LRConnectionExample(Swift)" */;
+			buildPhases = (
+				D76076B120B815FA0019E1D3 /* Sources */,
+				D76076B220B815FA0019E1D3 /* Frameworks */,
+				D76076B320B815FA0019E1D3 /* Resources */,
+				D7F3198720B943C2005B2107 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LRConnectionExample(Swift)";
+			productName = "LRConnectionExample(Swift)";
+			productReference = D76076B520B815FA0019E1D3 /* LRConnectionExample(Swift).app */;
+			productType = "com.apple.product-type.application";
+		};
 		D7610C9920A2A5220036BC44 /* LRConnectionExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7610CB020A2A5220036BC44 /* Build configuration list for PBXNativeTarget "LRConnectionExample" */;
@@ -193,9 +286,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LR;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = tomrlq;
 				TargetAttributes = {
+					D76076B420B815FA0019E1D3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					D7610C9920A2A5220036BC44 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -216,11 +314,22 @@
 			projectRoot = "";
 			targets = (
 				D7610C9920A2A5220036BC44 /* LRConnectionExample */,
+				D76076B420B815FA0019E1D3 /* LRConnectionExample(Swift) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D76076B320B815FA0019E1D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76076C220B815FA0019E1D3 /* LaunchScreen.storyboard in Resources */,
+				D76076BF20B815FA0019E1D3 /* Assets.xcassets in Resources */,
+				D76076BD20B815FA0019E1D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7610C9820A2A5220036BC44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +343,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D76076B120B815FA0019E1D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F3197E20B940F2005B2107 /* PhotoGalleryViewController.swift in Sources */,
+				D76076B820B815FA0019E1D3 /* AppDelegate.swift in Sources */,
+				D7F3198220B942D7005B2107 /* GalleryStore.swift in Sources */,
+				D7F3198920B961E3005B2107 /* GalleryItemCell.swift in Sources */,
+				D7F3198020B941F4005B2107 /* GalleryItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7610C9620A2A5220036BC44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +371,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D76076BB20B815FA0019E1D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76076BC20B815FA0019E1D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D76076C020B815FA0019E1D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76076C120B815FA0019E1D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		D7610CA820A2A5220036BC44 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,6 +398,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D76076C420B815FA0019E1D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43FVVDGE72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "LRConnectionExample(Swift)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.tomrlq.LRConnectionExample-Swift-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D76076C520B815FA0019E1D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43FVVDGE72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "LRConnectionExample(Swift)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.tomrlq.LRConnectionExample-Swift-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D7610CAE20A2A5220036BC44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +584,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D76076C620B815FA0019E1D3 /* Build configuration list for PBXNativeTarget "LRConnectionExample(Swift)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D76076C420B815FA0019E1D3 /* Debug */,
+				D76076C520B815FA0019E1D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D7610C9520A2A5220036BC44 /* Build configuration list for PBXProject "LRConnectionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
