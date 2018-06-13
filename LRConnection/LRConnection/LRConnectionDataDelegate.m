@@ -73,6 +73,18 @@
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     if (!error) {
+        int statusCode = (int)[(NSHTTPURLResponse *)task.response statusCode];
+        int statusClass = statusCode / 100;
+        if (statusClass == 4 || statusClass == 5) {
+            NSString *localizedDescription = [[NSString alloc] initWithData:dataContainer encoding:NSUTF8StringEncoding];
+            NSDictionary *userInfo = @{NSLocalizedDescriptionKey: localizedDescription,
+                                       NSURLErrorFailingURLErrorKey: task.response.URL};
+            error = [NSError errorWithDomain:@"LRConnection"
+                                        code:NSURLErrorBadServerResponse
+                                    userInfo:userInfo];
+        }
+    }
+    if (!error) {
         for (LRConnectionSuccessBlock successBlock in successBlocks) {
             successBlock(dataContainer);
         }
