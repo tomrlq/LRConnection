@@ -40,7 +40,7 @@
     NSInteger tag = self.tag;
     [[LRGalleryStore sharedStore] fetchImageForGalleryItem:galleryItem completion:^(UIImage *image, NSError *error) {
         if (!error && tag == self.tag) {
-            thumbnailView.image = image;
+            self->thumbnailView.image = image;
         }
     }];
 }

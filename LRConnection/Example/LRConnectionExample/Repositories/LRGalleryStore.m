@@ -52,7 +52,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
 - (void)fetchRecentPhotosWithCompletion:(void (^)(NSArray *, NSError *))completion {
     if (recentItems.count > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion ? completion(recentItems, nil) : nil;
+            completion ? completion(self->recentItems, nil) : nil;
         });
         return;
     }
@@ -63,8 +63,8 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
                              @"method" : FetchRecentsMethod};
     LRConnectionManager *manager = [LRConnectionManager sharedManager];
     [manager requestForUrl:EndPoint method:LRHTTPMethodGET params:params progress:nil success:^(NSData * _Nonnull data) {
-        [self parseItems:recentItems fromJSON:data];
-        completion ? completion(recentItems, nil) : nil;
+        [self parseItems:self->recentItems fromJSON:data];
+        completion ? completion(self->recentItems, nil) : nil;
     } failure:^(NSError * _Nonnull error) {
         completion ? completion(nil, error) : nil;
     }];
@@ -82,7 +82,7 @@ NSString * const FetchRecentsMethod = @"flickr.photos.getRecent";
     LRConnectionManager *manager = [LRConnectionManager sharedManager];
     [manager requestForUrl:imageKey method:LRHTTPMethodGET params:nil progress:nil success:^(NSData * _Nonnull data) {
         UIImage *image = [UIImage imageWithData:data];
-        [imageCache setObject:image forKey:imageKey];
+        [self->imageCache setObject:image forKey:imageKey];
         completion ? completion(image, nil) : nil;
     } failure:^(NSError * _Nonnull error) {
         completion ? completion(nil, error) : nil;

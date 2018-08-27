@@ -70,7 +70,7 @@
     id<NSURLSessionTaskDelegate> delegate = delegateCache[task.originalRequest];
     dispatch_async(dispatch_get_main_queue(), ^{
         [delegate URLSession:session task:task didCompleteWithError:error];
-        [delegateCache removeObjectForKey:task.originalRequest];
+        [self->delegateCache removeObjectForKey:task.originalRequest];
     });
 }
 

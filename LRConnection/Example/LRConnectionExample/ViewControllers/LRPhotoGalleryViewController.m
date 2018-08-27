@@ -39,7 +39,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"LRGalleryItemCell" bundle:nil] forCellReuseIdentifier:@"LRGalleryItemCell"];
     [[LRGalleryStore sharedStore] fetchRecentPhotosWithCompletion:^(NSArray *galleryItems, NSError *error) {
         if (!error) {
-            currentItems = galleryItems;
+            self->currentItems = galleryItems;
             [self.tableView reloadData];
         }
     }];
