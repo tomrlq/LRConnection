@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LRConnection"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "An HTTP library that makes networking easier"
   s.description  = <<-DESC
   LRConnection is an HTTP library that makes networking easier
